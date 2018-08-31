@@ -4,6 +4,7 @@ const merge = require('webpack-merge');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 const commonConfig = require('./webpack.common.config');
 
@@ -55,7 +56,10 @@ const prodConfig = {
     },
 
     plugins: [
-        new CleanWebpackPlugin(['dist'], { root: ROOT_DIR })
+        new CleanWebpackPlugin(['dist'], { root: ROOT_DIR }),
+        new ManifestPlugin({
+            basePath: '/'
+        })
     ]
 };
 
