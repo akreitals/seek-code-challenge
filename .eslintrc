@@ -1,0 +1,48 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb-base",
+    "plugin:flowtype/recommended",
+    "plugin:react/recommended",
+    "plugin:jest/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier",
+    "prettier/flowtype",
+    "prettier/react",
+    "prettier/standard"
+  ],
+  "plugins": [
+    "flowtype",
+    "react",
+    "jest",
+    "prettier",
+    "jsx-a11y"
+  ],
+  "rules": {
+    "comma-dangle": "off",
+    "import/prefer-default-export": "off",
+    "class-methods-use-this": "off",
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allowAfterThis": true
+      }
+    ],
+    "react/jsx-filename-extension": "off",
+    "prettier/prettier": ["error", {
+      "singleQuote": true,
+      "tabWidth": 4,
+      "printWidth": 80
+    }]
+  },
+  "settings": {
+    "react": {
+      "version": "16.4.2"
+    },
+    "import/resolver": "webpack"
+  },
+  "env": {
+    "jest/globals": true,
+    "browser": true
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "name": "seek-code-challenge",
+  "version": "1.0.0",
+  "description": "Seek coding challenge shopping cart",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env nodemon index.js",
+    "start:debug": "cross-env NODE_LOG_LEVEL=debug nodemon index.js --debug",
+    "start:prod": "cross-env NODE_ENV=production node index.js",
+    "build": "cross-env NODE_ENV=production webpack && npm run build:server",
+    "build:server": "cross-env NODE_ENV=production webpack --config config/webpack.server.config.js",
+    "build:analyse": "cross-env NODE_ENV=production NODE_ANALYZE=true webpack",
+    "lint": "./node_modules/.bin/eslint app server",
+    "test": "jest --updateSnapshot",
+    "eslint-check": "eslint --print-config . | eslint-config-prettier-check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akreitals/seek-code-challenge.git"
+  },
+  "author": "Adam Kreitals",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akreitals/seek-code-challenge/issues"
+  },
+  "homepage": "https://github.com/akreitals/seek-code-challenge#readme",
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-import-resolver-webpack": "^0.10.1",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.22.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.11.1",
+    "flow-bin": "^0.80.0",
+    "html-webpack-plugin": "^3.2.0",
+    "nodemon": "^1.18.4",
+    "prettier": "^1.14.2",
+    "webpack": "^4.17.1",
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-middleware": "^3.2.0",
+    "webpack-hot-middleware": "^2.23.0",
+    "webpack-merge": "^4.1.4",
+    "webpack-node-externals": "^1.7.2"
+  }
+}

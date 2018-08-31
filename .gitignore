@@ -1,0 +1,18 @@
+# compiled files
+dist
+
+# testing
+/coverage
+/reports
+*.log
+
+# node
+node_modules/
+npm-debug.log
+
+# os
+.DS_Store
+
+# ide
+*.iml
+.idea
