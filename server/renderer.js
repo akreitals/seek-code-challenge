@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDomServer from 'react-dom/server';
+import ThemeProvider from '../app/components/ThemeProvider/ThemeProvider';
 
 import App from '../app/App';
 
@@ -34,7 +35,7 @@ const render = html => {
 const serverSideRender = (req, res) => {
     const context = {};
 
-    const appWithRouter = <App />;
+    const appWithRouter = <ThemeProvider><App /></ThemeProvider>;
 
     if (context.url) {
         return res.redirect(context.url);

@@ -4,6 +4,11 @@ const webpack = require('webpack');
 const { NODE_ENV } = process.env;
 
 module.exports = {
+    resolve: {
+        modules: ['./node_modules'],
+        extensions: ['.js', '.jsx']
+    },
+
     output: {
         path: path.join(__dirname, '/dist'),
         filename: '[name].js'
@@ -12,7 +17,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: 'babel-loader'
             }
