@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDomServer from 'react-dom/server';
 import ThemeProvider from '../app/components/ThemeProvider/ThemeProvider';
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
 
 import App from '../app/App';
 
 const isProduction = process.env.NODE_ENV === 'production' || false;
 
-const render = html => {
+const render = (html, styles) => {
     const assetsManifest =
         process.env.webpackAssets && JSON.parse(process.env.webpackAssets);
 
@@ -18,6 +19,7 @@ const render = html => {
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <meta http-equiv="x-ua-compatible" content="ie=edge">
             <title>Seek Coding Challenge</title>
+            ${styles}
         </head>
         <body>
             <div id="root">${html}</div>
@@ -34,6 +36,7 @@ const render = html => {
 
 const serverSideRender = (req, res) => {
     const context = {};
+    const sheet = new ServerStyleSheet();
 
     const appWithRouter = <ThemeProvider><App /></ThemeProvider>;
 
@@ -41,9 +44,13 @@ const serverSideRender = (req, res) => {
         return res.redirect(context.url);
     }
 
-    const html = ReactDomServer.renderToString(appWithRouter);
+    const html = ReactDomServer.renderToString(
+        sheet.collectStyles(appWithRouter)
+    );
 
-    return res.status(200).send(render(html));
+    const styles = sheet.getStyleTags();
+
+    return res.status(200).send(render(html, styles));
 };
 
 export default serverSideRender;
