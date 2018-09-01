@@ -5,6 +5,7 @@ import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import morgan from 'morgan';
+import compression from 'compression';
 import Logger from './lib/logger/Logger';
 import webpackConfig from '../webpack.config';
 import renderer from './renderer';
@@ -37,6 +38,7 @@ if (isDevelopment) {
     app.use(hotMiddleware);
 }
 
+app.use(compression());
 app.use(morgan('combined'));
 app.use(express.static(path.resolve(__dirname, '..', 'dist')));
 

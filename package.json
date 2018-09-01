@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/akreitals/seek-code-challenge#readme",
   "dependencies": {
+    "compression": "^1.7.3",
     "cross-env": "^5.2.0",
     "express": "^4.16.3",
     "morgan": "^1.9.0",

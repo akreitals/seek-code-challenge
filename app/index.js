@@ -5,4 +5,9 @@ import { ThemeProvider } from './components';
 
 const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate;
 
-renderMethod(<ThemeProvider><App /></ThemeProvider>, document.getElementById('root'));
+renderMethod(
+    <ThemeProvider>
+        <App />
+    </ThemeProvider>,
+    document.getElementById('root')
+);

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDomServer from 'react-dom/server';
+import { ServerStyleSheet } from 'styled-components';
 import ThemeProvider from '../app/components/ThemeProvider/ThemeProvider';
-import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
 
 import App from '../app/App';
 
@@ -38,7 +38,11 @@ const serverSideRender = (req, res) => {
     const context = {};
     const sheet = new ServerStyleSheet();
 
-    const appWithRouter = <ThemeProvider><App /></ThemeProvider>;
+    const appWithRouter = (
+        <ThemeProvider>
+            <App />
+        </ThemeProvider>
+    );
 
     if (context.url) {
         return res.redirect(context.url);
