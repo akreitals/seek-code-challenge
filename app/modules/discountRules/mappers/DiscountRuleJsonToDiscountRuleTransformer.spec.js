@@ -3,23 +3,50 @@ import DiscountRuleJsonToDiscountRuleTransformer from './DiscountRuleJsonToDisco
 import AbstractDiscountRuleModel from '../models/AbstractDiscountRuleModel';
 import XForYDiscountRuleModel from '../models/XForYDiscountRuleModel';
 import FixedDiscountDiscountRuleModel from '../models/FixedDiscountDiscountRuleModel';
+import DiscountRuleAbstractFactory from '../DiscountRuleAbstractFactory';
+
+jest.mock('../DiscountRuleAbstractFactory');
 
 describe('DiscountRuleJsonToDiscountRuleTransformer', () => {
     const mockDiscountRuleData = {
         id: '1',
         productId: '1',
-        type: 'XforY',
+        type: 'XForY',
         triggerMultiple: 3,
         discountMultiple: 2,
         discountedPrice: 99
     };
 
+    let discountRuleAbstractFactory;
+    let mockDiscountRuleAbstractFactory;
+    let mockDiscountRuleAbstractFactoryCreateInstance;
+
+    beforeEach(() => {
+        (DiscountRuleAbstractFactory: any).mockClear();
+        discountRuleAbstractFactory = new DiscountRuleAbstractFactory();
+
+        mockDiscountRuleAbstractFactory = (DiscountRuleAbstractFactory: any)
+            .mock.instances[0];
+        mockDiscountRuleAbstractFactoryCreateInstance =
+            mockDiscountRuleAbstractFactory.createInstance;
+    });
+
     test('should successfully map a single DiscountRuleApiResponse data to a single AbstractDiscountRule model', async () => {
-        const discountRuleDataToDiscountRuleTransformer = new DiscountRuleJsonToDiscountRuleTransformer();
+        const discountRuleDataToDiscountRuleTransformer = new DiscountRuleJsonToDiscountRuleTransformer(
+            discountRuleAbstractFactory
+        );
+
+        mockDiscountRuleAbstractFactoryCreateInstance.mockReturnValueOnce(
+            new XForYDiscountRuleModel(mockDiscountRuleData)
+        );
 
         const discountRule = discountRuleDataToDiscountRuleTransformer.convertSingle(
             mockDiscountRuleData
         );
+
+        expect(
+            mockDiscountRuleAbstractFactoryCreateInstance.mock.calls
+        ).toHaveLength(1);
 
         expect(discountRule).not.toBeUndefined();
         expect(discountRule).toBeInstanceOf(AbstractDiscountRuleModel);
@@ -31,16 +58,29 @@ describe('DiscountRuleJsonToDiscountRuleTransformer', () => {
     });
 
     test('should successfully map multiple DiscountRuleApiResponse data to AbstractDiscountRule models', async () => {
-        const discountRuleDataToDiscountRuleTransformer = new DiscountRuleJsonToDiscountRuleTransformer();
+        const mockDiscountRuleData2 = Object.assign({}, mockDiscountRuleData, {
+            type: 'FixedDiscount'
+        });
+
+        const discountRuleDataToDiscountRuleTransformer = new DiscountRuleJsonToDiscountRuleTransformer(
+            discountRuleAbstractFactory
+        );
+
+        mockDiscountRuleAbstractFactoryCreateInstance
+            .mockReturnValueOnce(
+                new XForYDiscountRuleModel(mockDiscountRuleData)
+            )
+            .mockReturnValueOnce(
+                new FixedDiscountDiscountRuleModel(mockDiscountRuleData2)
+            );
 
         const discountRules = discountRuleDataToDiscountRuleTransformer.convertMultiple(
-            [
-                mockDiscountRuleData,
-                Object.assign({}, mockDiscountRuleData, {
-                    type: 'FixedDiscount'
-                })
-            ]
+            [mockDiscountRuleData, mockDiscountRuleData2]
         );
+
+        expect(
+            mockDiscountRuleAbstractFactoryCreateInstance.mock.calls
+        ).toHaveLength(2);
 
         expect(discountRules).toHaveLength(2);
 
@@ -63,5 +103,9 @@ describe('DiscountRuleJsonToDiscountRuleTransformer', () => {
         expect(discountRule2.triggerMultiple).toBeUndefined();
         expect(discountRule2.discountMultiple).toBeUndefined();
         expect(discountRule2.discountedPrice).toEqual(99);
+
+        expect(
+            mockDiscountRuleAbstractFactoryCreateInstance.mock.calls
+        ).toHaveLength(2);
     });
 });

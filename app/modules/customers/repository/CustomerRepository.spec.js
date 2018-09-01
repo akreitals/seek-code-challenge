@@ -16,7 +16,7 @@ describe('CustomerRepository', () => {
     let axiosJsonApiDao;
     let productJsonToCustomerTransformer;
     let mockCustomerJsonToCustomerTransformer;
-    let mockCustomerJsonToCustomerTransformerConvertMultiple;
+    let mockCustomerJsonToCustomerTransformerConvertSingle;
 
     beforeEach(() => {
         axiosJsonApiDao = new AxiosJsonApiDao('', null, null);
@@ -24,8 +24,8 @@ describe('CustomerRepository', () => {
 
         mockCustomerJsonToCustomerTransformer =
             CustomerJsonToCustomerTransformer.mock.instances[0];
-        mockCustomerJsonToCustomerTransformerConvertMultiple =
-            mockCustomerJsonToCustomerTransformer.convertMultiple;
+        mockCustomerJsonToCustomerTransformerConvertSingle =
+            mockCustomerJsonToCustomerTransformer.convertSingle;
 
         mockCustomer = new CustomerModel({ id: 1 });
     });
@@ -42,7 +42,7 @@ describe('CustomerRepository', () => {
 
         axiosJsonApiDao.get.mockResolvedValue(apiResponseDto);
 
-        mockCustomerJsonToCustomerTransformerConvertMultiple.mockReturnValueOnce(
+        mockCustomerJsonToCustomerTransformerConvertSingle.mockReturnValueOnce(
             mockCustomer
         );
 
@@ -56,7 +56,7 @@ describe('CustomerRepository', () => {
         expect(customer).toBe(mockCustomer);
 
         expect(
-            mockCustomerJsonToCustomerTransformerConvertMultiple.mock
+            mockCustomerJsonToCustomerTransformerConvertSingle.mock
                 .calls[0][0]
         ).toEqual(data);
 

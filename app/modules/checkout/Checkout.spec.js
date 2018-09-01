@@ -55,10 +55,14 @@ describe('DiscountRuleJsonToDiscountRuleTransformer', () => {
         expect(checkout.total()).toBe(2 * products[0].price);
 
         checkout.addItem(products[1]);
-        expect(checkout.total()).toBe(2 * products[0].price + products[1].price);
+        expect(checkout.total()).toBe(
+            2 * products[0].price + products[1].price
+        );
 
         checkout.addItem(products[1]);
-        expect(checkout.total()).toBe(2 * products[0].price + 2 * products[1].price);
+        expect(checkout.total()).toBe(
+            2 * products[0].price + 2 * products[1].price
+        );
     });
 
     test('should remove items to the cart and recalculate total', () => {
@@ -67,7 +71,9 @@ describe('DiscountRuleJsonToDiscountRuleTransformer', () => {
         checkout.addItem(products[0]);
         checkout.addItem(products[0]);
         checkout.addItem(products[1]);
-        expect(checkout.total()).toBe(2 * products[0].price + products[1].price);
+        expect(checkout.total()).toBe(
+            2 * products[0].price + products[1].price
+        );
 
         checkout.removeItem(products[0]);
         expect(checkout.total()).toBe(products[0].price + products[1].price);
@@ -79,7 +85,9 @@ describe('DiscountRuleJsonToDiscountRuleTransformer', () => {
         checkout.addItem(products[0]);
         checkout.addItem(products[1]);
         checkout.addItem(products[1]);
-        expect(checkout.total()).toBe(2 * discountRules[0].discountedPrice + products[0].price);
+        expect(checkout.total()).toBe(
+            2 * discountRules[0].discountedPrice + products[0].price
+        );
     });
 
     test('should apply XForY discount rule to the cart and recalculate total', () => {
@@ -132,6 +140,10 @@ describe('DiscountRuleJsonToDiscountRuleTransformer', () => {
         checkout.addItem(products[2]);
         checkout.addItem(products[2]);
         checkout.addItem(products[2]);
-        expect(checkout.total()).toBe(4 * products[0].price + 2 * discountRules[0].discountedPrice + 3 * discountRules[2].discountedPrice);
+        expect(checkout.total()).toBe(
+            4 * products[0].price +
+                2 * discountRules[0].discountedPrice +
+                3 * discountRules[2].discountedPrice
+        );
     });
 });
