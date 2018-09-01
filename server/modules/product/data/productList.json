@@ -1,0 +1,35 @@
+{
+  "data": [
+    {
+      "id":1,
+      "name": "Classic Ad",
+      "price": 26999,
+      "description": "The most basic level of advertisement",
+      "image": "https://www.interconny.com/assets/images/times-square2-cropped.jpg",
+      "features": []
+    },
+    {
+      "id":2,
+      "name": "Standout Ad",
+      "price": 32299,
+      "description": "Create a standout add using your own company branding",
+      "image": "https://www.interconny.com/assets/images/times-square2-cropped.jpg",
+      "features": [
+        "Use company logo",
+        "Longer presentation text"
+      ]
+    },
+    {
+      "id":3,
+      "name": "Premium Ad",
+      "price": 39499,
+      "description": "Guarantee you stand out be always being at the top of results",
+      "image": "https://www.interconny.com/assets/images/times-square2-cropped.jpg",
+      "features": [
+        "Use company logo",
+        "Longer presentation text",
+        "Top of the results"
+      ]
+    }
+  ]
+}
