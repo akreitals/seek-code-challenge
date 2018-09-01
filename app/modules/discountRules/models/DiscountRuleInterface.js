@@ -3,4 +3,5 @@ export interface DiscountRuleInterface {
     id: string;
     productId: string;
     displayName: string;
+    applyDiscount(): void;
 }

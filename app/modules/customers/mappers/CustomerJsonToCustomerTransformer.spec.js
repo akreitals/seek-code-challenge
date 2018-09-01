@@ -32,8 +32,10 @@ describe('CustomerJsonToCustomerTransformer', () => {
         (DiscountRuleJsonToDiscountRuleTransformer: any).mockClear();
         discountRuleJsonToDiscountRuleTransformer = new DiscountRuleJsonToDiscountRuleTransformer();
 
-        mockDiscountRuleJsonToDiscountRuleTransformer = (DiscountRuleJsonToDiscountRuleTransformer: any).mock.instances[0];
-        mockDiscountRuleJsonToDiscountRuleTransformerConvert = mockDiscountRuleJsonToDiscountRuleTransformer.convertMultiple;
+        mockDiscountRuleJsonToDiscountRuleTransformer = (DiscountRuleJsonToDiscountRuleTransformer: any)
+            .mock.instances[0];
+        mockDiscountRuleJsonToDiscountRuleTransformerConvert =
+            mockDiscountRuleJsonToDiscountRuleTransformer.convertMultiple;
     });
 
     test('should successfully map a single CustomerApiResponse data to a single company model', async () => {
@@ -52,9 +54,11 @@ describe('CustomerJsonToCustomerTransformer', () => {
         expect(company.company).toEqual('Ford');
         expect(company.email).toEqual('modelh@ford.com');
         expect(
-            mockDiscountRuleJsonToDiscountRuleTransformerConvert.mock.calls).toHaveLength(1);
+            mockDiscountRuleJsonToDiscountRuleTransformerConvert.mock.calls
+        ).toHaveLength(1);
         expect(
-            mockDiscountRuleJsonToDiscountRuleTransformerConvert.mock.calls[0][0]
+            mockDiscountRuleJsonToDiscountRuleTransformerConvert.mock
+                .calls[0][0]
         ).toEqual(mockCustomerData.discountRules);
     });
 });

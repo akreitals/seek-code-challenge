@@ -43,7 +43,7 @@
           "displayName": "Only $377.99 if you buy 4 or more",
           "type": "XAfterY",
           "triggerMultiple": 4,
-          "discountedPrice": 37799
+          "discountedPrice": 37999
         }
       ]
     },

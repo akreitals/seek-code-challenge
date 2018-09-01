@@ -1,6 +1,7 @@
 // @flow
 import type { DiscountRuleInterface } from './DiscountRuleInterface';
 import { DiscountRuleApiResponse } from '../DiscountRuleApiResponseType';
+import type { Cart } from '../../checkout/Checkout';
 
 export default class DiscountRuleModel implements DiscountRuleInterface {
     id: string;
@@ -15,7 +16,7 @@ export default class DiscountRuleModel implements DiscountRuleInterface {
         this.displayName = source.displayName;
     }
 
-    getId() {
-        return `This id is: ${this.id}`;
+    applyDiscount(cart: Cart): void {
+        throw new Error(`applyDiscount(cart) not implemented: ${cart}`);
     }
 }

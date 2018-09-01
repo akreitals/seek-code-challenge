@@ -2,7 +2,7 @@
 export type ProductApiResponse = {
     id: string,
     name: string,
+    price: number,
     image: string,
-    description: string,
-    part: boolean
+    description: string
 };

@@ -6,11 +6,18 @@ export default class CustomerController {
         try {
             const { customerId = null } = req.params;
 
-            const customer = customerListJson.data[3];
+            const customerJson = customerListJson.data.find(
+                customer => customer.id === customerId
+            );
 
-            res.json({ data: customer });
+            if (customerJson) {
+                res.json({
+                    data: customerJson
+                });
+            } else {
+                res.status(404).send('Not Found');
+            }
         } catch (error) {
-            console.log(error);
             res.json({ error });
         }
     }
