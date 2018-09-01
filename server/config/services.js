@@ -1,5 +1,7 @@
-import productServices from '../modules/product/services';
+import productsServices from '../modules/products/services';
+import customersServices from '../modules/customers/services';
 
 export default {
-    ...productServices
+    ...productsServices,
+    ...customersServices
 };

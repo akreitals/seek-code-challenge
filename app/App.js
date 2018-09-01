@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { Text, Heading } from './components';
-import { productRepository } from './modules/product/repository/ProductRepositoryFactory';
+import { productRepository } from './modules/products/repository/ProductRepositoryFactory';
+import { customerRepository } from './modules/customers/repository/CustomerRespoistoryFactory';
 
 export default class App extends Component {
     async componentDidMount() {
         const products = await productRepository.getAll();
         console.log(products);
+        const customer = await customerRepository.findById('1');
+        console.log(customer);
     }
 
     render() {

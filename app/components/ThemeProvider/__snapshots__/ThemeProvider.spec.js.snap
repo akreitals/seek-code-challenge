@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemeProvider should render content with theme 1`] = `
+.c0 {
+  color: #e60278;
+}
+
+<p
+  className="c0"
+>
+  Hello!
+</p>
+`;

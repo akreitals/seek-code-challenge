@@ -1,0 +1,82 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "name": "Uni Leaver",
+      "company": "Unilever",
+      "email": "customer@unilever.com",
+      "discountRules": [
+        {
+          "id": "1",
+          "productId":"1",
+          "displayName": "Buy 2 get 1 Free",
+          "type": "XForY",
+          "triggerMultiple": 3,
+          "discountMultiple": 2
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Isaac Newton",
+      "company": "Apple",
+      "email": "customer@apple.com",
+      "discountRules": [
+        {
+          "id": "2",
+          "productId": "2",
+          "displayName": "Price Drop",
+          "type": "FixedDiscount",
+          "discountedPrice": 29999
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Justin Doit",
+      "company": "Nike",
+      "email": "customer@nike.com",
+      "discountRules": [
+        {
+          "id": "3",
+          "productId": "3",
+          "displayName": "Only $377.99 if you buy 4 or more",
+          "type": "XAfterY",
+          "triggerMultiple": 4,
+          "discountedPrice": 37799
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Henry Fjord",
+      "company": "Ford",
+      "email": "customer@ford.com",
+      "discountRules": [
+        {
+          "id": "1",
+          "productId":"1",
+          "type": "XForY",
+          "displayName": "Get 5 for the price of 4",
+          "triggerMultiple": 5,
+          "discountMultiple": 4
+        },
+        {
+          "id": "2",
+          "productId": "2",
+          "displayName": "On sale",
+          "type": "FixedDiscount",
+          "discountedPrice": 30999
+        },
+        {
+          "id": "3",
+          "productId": "3",
+          "type": "XAfterY",
+          "displayName": "Only $389.99 if you buy 3 or more",
+          "triggerMultiple": 3,
+          "discountedPrice": 38999
+        }
+      ]
+    }
+  ]
+}

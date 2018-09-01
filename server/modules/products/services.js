@@ -1,4 +1,4 @@
-const PRODUCT_MODULE_PATH = 'modules/product';
+const PRODUCT_MODULE_PATH = 'modules/products';
 
 export default {
     productController: {

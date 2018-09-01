@@ -1,5 +1,6 @@
-import product from '../modules/product/routes';
+import products from '../modules/products/routes';
+import customers from '../modules/customers/routes';
 
 export default {
-    modules: [product]
+    modules: [products, customers]
 };
