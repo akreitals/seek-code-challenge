@@ -4,6 +4,7 @@ exports[`Container maxWidth prop successfully set maxWidth on container 1`] = `
 .c0 {
   margin-left: auto;
   margin-right: auto;
+  padding: 0 8px;
   max-width: 1024px;
 }
 
@@ -16,6 +17,7 @@ exports[`Container should render a <Container /> component with default theme ma
 .c0 {
   margin-left: auto;
   margin-right: auto;
+  padding: 0 8px;
   max-width: 940px;
 }
 

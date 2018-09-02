@@ -24,9 +24,9 @@ describe('Flex', () => {
     });
 
     test('wrap prop', () => {
-        const flex = renderer.create(<Flex wrap />).toJSON();
+        const flex = renderer.create(<Flex flexWrap="flex-wrap" />).toJSON();
         expect(flex).toMatchSnapshot();
-        expect(flex).toHaveStyleRule('flex-wrap', 'wrap');
+        expect(flex).toHaveStyleRule('flex-wrap', 'flex-wrap');
     });
 
     test('direction prop', () => {

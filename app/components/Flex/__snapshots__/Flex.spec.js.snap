@@ -69,13 +69,12 @@ exports[`Flex wrap prop 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-flex-wrap: flex-wrap;
+  -ms-flex-wrap: flex-wrap;
+  flex-wrap: flex-wrap;
 }
 
 <div
   className="c0 "
-  wrap={true}
 />
 `;

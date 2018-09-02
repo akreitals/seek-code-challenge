@@ -27,6 +27,6 @@ describe('Currency', () => {
             .create(<Currency locale="de-DE" currency="EUR" value={909.91} />)
             .toJSON();
         expect(json).toMatchSnapshot();
-        expect(json.children[0]).toBe('€909.91');
+        expect(json.children[0]).toBe('€ 909.91');
     });
 });

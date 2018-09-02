@@ -12,7 +12,7 @@ exports[`Currency should allow a different locale to be set 1`] = `
 <p
   className="sc-bdVaJa hvucuj"
 >
-  €909.91
+  € 909.91
 </p>
 `;
 
