@@ -4,7 +4,7 @@ const emoji = '"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"';
 const font = `Averta, -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif, ${emoji}`;
 const mono = 'SFMono-Regular,"Roboto Mono",Menlo,monospace';
 
-const fontSizes = [12, 14, 16, 18, 24, 32, 42, 64, 72, 96];
+const fontSizes = [12, 14, 16, 18, 24, 32, 48, 64, 72, 96];
 const space = [0, 4, 8, 16, 32, 64, 128];
 const regular = 400;
 const bold = 600;

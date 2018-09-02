@@ -2,15 +2,9 @@ import * as types from './types';
 import { productRepository } from '../../modules/products/repository/ProductRepositoryFactory';
 
 export const fetchList = () => {
-    function request() {
-        return { type: types.FETCH_LIST };
-    }
-    function success(products) {
-        return { type: types.FETCH_LIST_COMPLETED, payload: { products } };
-    }
-    function failure(error) {
-        return { type: types.FETCH_LIST_FAILED, payload: { error } };
-    }
+    const request = () => ({ type: types.FETCH_LIST_REQUEST });
+    const success = (products) => ({type: types.FETCH_LIST_SUCCESS, payload: { products }});
+    const failure = (error) => ({type: types.FETCH_LIST_FAILURE, payload: { error }});
 
     return async dispatch => {
         dispatch(request());

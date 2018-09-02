@@ -16,7 +16,7 @@ Heading.defaultProps = {
 
 Heading.h1 = Heading.withComponent('h1');
 Heading.h1.defaultProps = {
-    fontSize: 6,
+    fontSize: [4, 6],
     regular: true,
     m: 0
 };

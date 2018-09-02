@@ -15,13 +15,17 @@ describe('Currency', () => {
     });
 
     test('should allow a different current to be set', () => {
-        const json = renderer.create(<Currency currency='EUR' value={909.91} />).toJSON();
+        const json = renderer
+            .create(<Currency currency="EUR" value={909.91} />)
+            .toJSON();
         expect(json).toMatchSnapshot();
         expect(json.children[0]).toBe('€909.91');
     });
 
     test('should allow a different locale to be set', () => {
-        const json = renderer.create(<Currency locale='de-DE' currency='EUR' value={909.91} />).toJSON();
+        const json = renderer
+            .create(<Currency locale="de-DE" currency="EUR" value={909.91} />)
+            .toJSON();
         expect(json).toMatchSnapshot();
         expect(json.children[0]).toBe('€909.91');
     });

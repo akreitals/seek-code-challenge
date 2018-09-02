@@ -4,6 +4,7 @@ import { ServerStyleSheet } from 'styled-components';
 import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom';
 import { configureStore } from '../app/state/configureStore';
+import { CookiesProvider } from 'react-cookie';
 import ThemeProvider from '../app/components/ThemeProvider/ThemeProvider';
 
 import RoutesContainer from '../app/containers/Routes/RoutesContainer';
@@ -45,9 +46,11 @@ const serverSideRender = (req, res) => {
     const appWithRouter = (
         <Provider store={store}>
             <ThemeProvider>
-                <StaticRouter location={req.url} context={context}>
-                    <RoutesContainer />
-                </StaticRouter>
+                <CookiesProvider cookies={req.universalCookies}>
+                    <StaticRouter location={req.url} context={context}>
+                        <RoutesContainer />
+                    </StaticRouter>
+                </CookiesProvider>
             </ThemeProvider>
         </Provider>
     );

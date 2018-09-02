@@ -17,11 +17,11 @@ const initialState = {
 };
 
 const listReducer = createReducer(initialState)({
-    [types.FETCH_LIST]: state => ({
+    [types.FETCH_LIST_REQUEST]: state => ({
         ...state,
         loading: true
     }),
-    [types.FETCH_LIST_COMPLETED]: (state, action) => {
+    [types.FETCH_LIST_SUCCESS]: (state, action) => {
         const { products } = action.payload;
         console.log(action);
         return {
@@ -30,7 +30,7 @@ const listReducer = createReducer(initialState)({
             products
         };
     },
-    [types.FETCH_LIST_FAILED]: (state, action) => ({
+    [types.FETCH_LIST_FAILURE]: (state, action) => ({
         ...state,
         loading: false,
         error: action.error

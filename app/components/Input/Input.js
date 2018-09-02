@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { space, width } from 'styled-system';
+import { space, width, borders } from 'styled-system';
 import PropTypes from 'prop-types';
 import theme, { radius, colors } from '../theme';
 
@@ -37,7 +37,7 @@ const Input = styled('input')`
             border: 0;
         }
     }
-    ${width} ${space};
+    ${width} ${space} ${borders};
 `;
 
 Input.displayName = 'Input';
@@ -46,7 +46,8 @@ Input.propTypes = {
     id: PropTypes.string.isRequired,
     color: PropTypes.string,
     ...width.PropTypes,
-    ...space.PropTypes
+    ...space.PropTypes,
+    ...borders.PropTypes
 };
 
 Input.defaultProps = {

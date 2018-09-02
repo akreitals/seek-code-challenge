@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { space } from 'styled-system';
+import { space, width } from 'styled-system';
 import theme from '../theme';
 
 const fullWidth = props => (props.fullWidth ? { width: '100%' } : null);
@@ -20,8 +20,8 @@ const Button = styled('button')`
     color: ${props => props.theme.colors.white};
     border-width: 0;
     border-style: solid;
-    font-size: ${theme.fontSizes[4]}px;
-    padding: 0 ${theme.space[4]}px;
+    font-size: ${theme.fontSizes[3]}px;
+    padding: 0 20px;
 
     ${props => props.disabled && { opacity: 0.25, cursor: 'not-allowed' }};
 
@@ -40,14 +40,15 @@ const Button = styled('button')`
         }
     }
 
-    ${fullWidth} ${space};
+    ${fullWidth} ${space} ${width};
 `;
 
 Button.displayName = 'Button';
 
 Button.propTypes = {
     fullWidth: PropTypes.bool,
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    ...width.PropTypes
 };
 
 Button.defaultProps = {

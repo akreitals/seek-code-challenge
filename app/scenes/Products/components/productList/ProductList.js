@@ -15,10 +15,10 @@ function ProductList(props) {
                     addToCart={props.addToCart}
                     removeFromCart={props.removeFromCart}
                     cartItem={
-                         props.cart.cartItems.filter(
-                             cartItem => cartItem.id === product.id
-                         )[0]
-                     }
+                        props.cart.cartItems.filter(
+                            cartItem => cartItem.id === product.id
+                        )[0]
+                    }
                 />
             ))}
         </Flex>
@@ -29,7 +29,7 @@ const mapStateToProps = state => ({ cart: state.cart });
 
 const mapDispatchToProps = {
     addToCart: cartOperations.addToCart,
-    removeFromCart: cartOperations.removeFromCart,
+    removeFromCart: cartOperations.removeFromCart
 };
 
 export default connect(

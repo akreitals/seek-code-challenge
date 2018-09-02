@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { space, width, color, fontSize, textAlign } from 'styled-system';
+import { space, width, color, fontSize, textAlign, borders } from 'styled-system';
 import theme from '../theme';
 
 const Box = styled('div')(space, width, color, fontSize, textAlign);
@@ -17,7 +17,8 @@ Box.propTypes = {
     ...width.propTypes,
     ...color.propTypes,
     ...fontSize.propTypes,
-    ...textAlign.propTypes
+    ...textAlign.propTypes,
+    ...borders.propTypes
 };
 
 Box.defaultProps = {
