@@ -1,14 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Button, Container, Heading } from '../../components';
+import { Button, Container, Currency, Heading } from '../../components';
 import { cartOperations } from '../../state/cart';
-import ProductModel from '../../modules/products/ProductModel';
 
 function sort(items) {
-    return items.sort((a, b) => a.id < b.id);
+    return items.sort((a, b) => a.id > b.id);
 }
-
-const mockProduct1 = new ProductModel({ id: 1, name: 'mock 1' });
 
 function CartScene(props) {
     return (
@@ -45,7 +42,7 @@ function CartScene(props) {
                     ))}
                 </tbody>
             </table>
-            <Heading.h4>{props.total}</Heading.h4>
+            <Currency value={props.total / 100} />
         </Container>
     );
 }

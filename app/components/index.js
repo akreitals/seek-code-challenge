@@ -2,6 +2,7 @@ export { default as Box } from './Box/Box';
 export { default as Button } from './Button/Button';
 export { default as Card } from './Card/Card';
 export { default as Container } from './Container/Container';
+export { default as Currency } from './Currency/Currency';
 export { default as Flex } from './Flex/Flex';
 export { default as Heading } from './Heading/Heading';
 export { default as Image } from './Image/Image';

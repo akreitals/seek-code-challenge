@@ -1,7 +1,7 @@
 import React from 'react';
-import { Text, Image, Heading, Card } from '../../../../components';
-import AddToCartButton from '../productList/AddToCartButton';
-import RemoveFromCartButton from '../productList/RemoveFromCartButton';
+import { Currency, Text, Image, Heading, Card } from '../../../../components';
+import AddToCartButton from './AddToCartButton';
+import RemoveFromCartButton from './RemoveFromCartButton';
 
 export default function ProductListItem({
     product,
@@ -10,17 +10,17 @@ export default function ProductListItem({
     removeFromCart
 }) {
     return (
-        <Card m={10} width={300} boxShadowSize="sm">
-            <Heading.h3>{product.name}</Heading.h3>
-            <Image
+        <Card m={10} minWidth={250} boxShadowSize="sm">
+            <Image mb={2}
                 height={100}
                 title={product.name}
                 src={product.image}
                 alt={product.name}
             />
-            <Text>{product.description}</Text>
-            <Text>${product.price}</Text>
-            <AddToCartButton
+            <Heading.h2 mb={2}>{product.name}</Heading.h2>
+            <Text mb={2}>{product.description}</Text>
+            <Currency mb={2} value={product.price / 100} />
+            <AddToCartButton mb={2}
                 cartItem={cartItem}
                 product={product}
                 addToCart={addToCart}
