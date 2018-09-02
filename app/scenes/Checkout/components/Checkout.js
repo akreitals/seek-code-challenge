@@ -12,6 +12,7 @@ import {
     Text
 } from '../../../components';
 import CartItemModel from '../../../modules/checkout/CartItemModel';
+import CheckoutList from './CheckoutList';
 
 type CheckoutProps = {
     cartItems: Array<CartItemModel>,
@@ -19,8 +20,6 @@ type CheckoutProps = {
     removeFromCart: func,
     addToCart: func
 };
-
-const sort = items => items.sort((a, b) => a.id > b.id);
 
 const Checkout = ({
     cartItems,
@@ -32,32 +31,12 @@ const Checkout = ({
         <Header />
         <Heading.h1 mb={2}>Checkout</Heading.h1>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Quantity</th>
-                    <th />
-                    <th />
-                </tr>
-            </thead>
-            <tbody>
-                {sort(cartItems).map(item => (
-                    <tr key={item.id}>
-                        <td>{item.name}</td>
-                        <td>{item.quantity}</td>
-                        <td>
-                            <Button onClick={() => addToCart(item)}>+</Button>
-                        </td>
-                        <td>
-                            <Button onClick={() => removeFromCart(item)}>
-                                -
-                            </Button>
-                        </td>
-                    </tr>
-                ))}
-            </tbody>
-        </table>
+        <CheckoutList
+            cartItems={cartItems}
+            removeFromCart={removeFromCart}
+            addToCart={addToCart}
+        />
+
         <Flex alignItems="center" justifyContent="flex-end">
             <Text fontSize={5} color="charcoal">
                 Total:{' '}
@@ -71,6 +50,7 @@ const Checkout = ({
                 />
             </Box>
         </Flex>
+
         <Box mt={3} textAlign="right">
             <Link to="/">
                 <Button.secondary mb={[2, 0]} width={[1, 1 / 3]}>

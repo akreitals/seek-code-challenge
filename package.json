@@ -84,5 +84,11 @@
     "webpack-manifest-plugin": "^2.0.3",
     "webpack-merge": "^4.1.4",
     "webpack-node-externals": "^1.7.2"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "app/*",
+      "public/*"
+    ]
   }
 }
