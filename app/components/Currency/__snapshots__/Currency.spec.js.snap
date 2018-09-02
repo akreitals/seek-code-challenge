@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Currency should allow a different current to be set 1`] = `
+<p
+  className="sc-bdVaJa hvucuj"
+>
+  €909.91
+</p>
+`;
+
+exports[`Currency should allow a different locale to be set 1`] = `
+<p
+  className="sc-bdVaJa hvucuj"
+>
+  €909.91
+</p>
+`;
+
+exports[`Currency should default to the AU locale 1`] = `
+<p
+  className="sc-bdVaJa hvucuj"
+>
+  A$909.91
+</p>
+`;
+
+exports[`Currency should render a <Currency /> component 1`] = `
+<p
+  className="sc-bdVaJa hvucuj"
+>
+  A$909.91
+</p>
+`;

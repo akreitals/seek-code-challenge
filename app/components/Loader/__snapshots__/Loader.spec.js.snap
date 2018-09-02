@@ -6,13 +6,13 @@ exports[`Loader should render a <Loader /> component 1`] = `
   width="66px"
 >
   <div
-    className="hhbh9w-0 kyklap"
+    className="sc-13b099f-0 iQGCCd"
   />
   <div
-    className="hhbh9w-0 kyklap"
+    className="sc-13b099f-0 iQGCCd"
   />
   <div
-    className="hhbh9w-0 kyklap"
+    className="sc-13b099f-0 iQGCCd"
   />
 </div>
 `;

@@ -6,6 +6,8 @@ export { default as Currency } from './Currency/Currency';
 export { default as Flex } from './Flex/Flex';
 export { default as Heading } from './Heading/Heading';
 export { default as Image } from './Image/Image';
+export { default as Input } from './Input/Input';
+export { default as Label } from './Label/Label';
 export { default as Loader } from './Loader/Loader';
 export { default as Text } from './Text/Text';
 export { default as ThemeProvider } from './ThemeProvider/ThemeProvider';

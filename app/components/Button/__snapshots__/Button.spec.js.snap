@@ -12,6 +12,7 @@ exports[`Button should render a <Button /> component 1`] = `
   font-weight: 400;
   line-height: 42px;
   cursor: pointer;
+  border-radius: 2px;
   background-color: #e60278;
   color: #ffffff;
   border-width: 0;
@@ -47,6 +48,7 @@ exports[`Button should render a disabled button when disabled prop is set 1`] = 
   font-weight: 400;
   line-height: 42px;
   cursor: pointer;
+  border-radius: 2px;
   background-color: #e60278;
   color: #ffffff;
   border-width: 0;
