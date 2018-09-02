@@ -24,10 +24,13 @@ export default class AxiosJsonApiDao implements ApiDaoInterface {
         this._apiResponseToApiResponseDtoTransformer = apiResponseToApiResponseDtoTransformer;
     }
 
+    /**
+     * @inheritDoc
+     */
     async get(apiRequestDto: GetApiRequestDto): Promise<ApiResponseDto> {
         const response = await this._axios({
             method: apiRequestDto.getMethod(),
-            url: this.getEndpoint(apiRequestDto)
+            url: this._getEndpoint(apiRequestDto)
         });
 
         return this._apiResponseToApiResponseDtoTransformer.convertSingle(
@@ -35,10 +38,13 @@ export default class AxiosJsonApiDao implements ApiDaoInterface {
         );
     }
 
+    /**
+     * @inheritDoc
+     */
     async list(apiRequestDto: ListApiRequestDto): Promise<ApiResponseDto> {
         const response = await this._axios({
             method: apiRequestDto.getMethod(),
-            url: this.getEndpoint(apiRequestDto)
+            url: this._getEndpoint(apiRequestDto)
         });
 
         return this._apiResponseToApiResponseDtoTransformer.convertSingle(
@@ -46,7 +52,13 @@ export default class AxiosJsonApiDao implements ApiDaoInterface {
         );
     }
 
-    getEndpoint(apiRequestDto: AbstractApiRequestDto): string {
+    /**
+     * Build API endpoint
+     * @param {AbstractApiRequestDto} apiRequestDto
+     * @returns {string}
+     * @private
+     */
+    _getEndpoint(apiRequestDto: AbstractApiRequestDto): string {
         return `${this._baseUrl}${apiRequestDto.getEndpoint()}`;
     }
 }

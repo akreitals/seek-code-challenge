@@ -12,7 +12,7 @@
       "id":2,
       "name": "Standout Ad",
       "price": 32299,
-      "description": "Create a standout add using your own company branding",
+      "description": "Create a standout Ad using your own company branding",
       "image": "https://www.interconny.com/assets/images/times-square2-cropped.jpg",
       "features": [
         "Use company logo",
@@ -23,7 +23,7 @@
       "id":3,
       "name": "Premium Ad",
       "price": 39499,
-      "description": "Guarantee you stand out be always being at the top of results",
+      "description": "Guarantee you stand out by always showing right at the top of results",
       "image": "https://www.interconny.com/assets/images/times-square2-cropped.jpg",
       "features": [
         "Use company logo",

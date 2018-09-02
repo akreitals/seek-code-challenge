@@ -12,6 +12,10 @@ export default class VoteDataToVoteTransformer extends AbstractDataTransformer {
         this._discountRuleJsonToDiscountRuleTransformer = discountRuleJsonToDiscountRuleTransformer;
     }
 
+    /**
+     * @param {CustomerApiResponse} source
+     * @returns {CustomerModel}
+     */
     convertSingle(source: CustomerApiResponse): CustomerModel {
         return new CustomerModel({
             id: source.id,

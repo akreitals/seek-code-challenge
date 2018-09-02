@@ -14,8 +14,8 @@ export default class AuthService {
 
     /**
      * Login user
-     * @param username: String
-     * @param password: String
+     * @param {String} username
+     * @param {String} password
      * @returns {Promise.<{id: String}>}
      */
     async login(username: string, password: string) {
@@ -73,7 +73,7 @@ export default class AuthService {
 
     /**
      * Set customer
-     * @param customer
+     * @param {CustomerModel} customer
      */
     setCustomer(customer: CustomerModel): void {
         this._customer = customer;

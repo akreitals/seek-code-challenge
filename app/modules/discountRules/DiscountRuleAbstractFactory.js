@@ -17,7 +17,12 @@ export default class DiscountRuleAbstractFactory {
         });
     }
 
-    register(modelName, model) {
+    /**
+     * @param {string} modelName
+     * @param {AbstractDiscountRuleModel} model
+     * @param model
+     */
+    register(modelName: string, model: AbstractDiscountRuleModel) {
         if (
             !this._registeredTypes.has(modelName) &&
             model.prototype instanceof AbstractDiscountRuleModel
@@ -30,6 +35,11 @@ export default class DiscountRuleAbstractFactory {
         }
     }
 
+    /**
+     * @param {string} modelName
+     * @param {any} options
+     * @return AbstractDiscountRuleModel
+     */
     createInstance(
         modelName: string,
         ...options: any

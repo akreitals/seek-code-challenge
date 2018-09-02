@@ -2,10 +2,10 @@
 import type AbstractDiscountRuleModel from '../discountRules/models/AbstractDiscountRuleModel';
 import type ProductModel from '../products/ProductModel';
 import CartItemModel from './CartItemModel';
+import type { Cart } from './CheckoutInterface';
+import { CheckoutInterface } from './CheckoutInterface';
 
-export type Cart = Array<CartItemModel>;
-
-export default class Checkout {
+export default class Checkout implements CheckoutInterface {
     _discountRules: Array<AbstractDiscountRuleModel>;
 
     _cart: Cart;
@@ -18,6 +18,9 @@ export default class Checkout {
         this._total = 0;
     }
 
+    /**
+     * @inheritDoc
+     */
     addItem(product: ProductModel): Cart {
         const cartItem = this._cart[product.id];
         if (!cartItem) {
@@ -30,6 +33,9 @@ export default class Checkout {
         return this._cart;
     }
 
+    /**
+     * @inheritDoc
+     */
     removeItem(product: ProductModel): Cart {
         const cartItem = this._cart[product.id];
         if (cartItem) {
@@ -44,6 +50,9 @@ export default class Checkout {
         return this._cart;
     }
 
+    /**
+     * @inheritDoc
+     */
     removeAllItems(product: ProductModel): Cart {
         const cartItem = this._cart[product.id];
         if (cartItem) delete this._cart[product.id];
@@ -51,14 +60,24 @@ export default class Checkout {
         this._updateDiscount();
     }
 
+    /**
+     * @inheritDoc
+     */
     total(): number {
         return this._total;
     }
 
+    /**
+     * @inheritDoc
+     */
     getCartItems() {
         return Object.values(this._cart);
     }
 
+    /**
+     * Update the total price based on discounts applied to the current cart
+     * @private
+     */
     _updateDiscount(): void {
         this._discountRules.forEach((discountRule: AbstractDiscountRuleModel) =>
             discountRule.applyDiscount(this._cart)

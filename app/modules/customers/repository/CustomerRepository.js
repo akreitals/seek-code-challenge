@@ -18,6 +18,11 @@ export default class CustomerRepository {
         this._dataTransformer = dataTransformer;
     }
 
+    /**
+     * Make GET requests Customer by with ID
+     * @param {String} id
+     * @returns {Promise.<Array.<ProductModel>>}
+     */
     async findById(id: string): Promise<CustomerModel> {
         const request = new GetApiRequestDto(ENDPOINTS.GET.replace(':id', id));
 

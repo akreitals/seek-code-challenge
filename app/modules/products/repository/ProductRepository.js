@@ -18,6 +18,10 @@ export default class ProductRepository {
         this._dataTransformer = dataTransformer;
     }
 
+    /**
+     * Make GET requests for all Products
+     * @returns {Promise.<Array.<ProductModel>>}
+     */
     async getAll(): Promise<ProductModel> {
         const request = new ListApiRequestDto(ENDPOINTS.LIST);
 

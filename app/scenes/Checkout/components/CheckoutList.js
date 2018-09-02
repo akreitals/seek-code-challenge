@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link as RouteLink } from 'react-router-dom';
-import { Button, Text, Link, Box } from '../../../components';
+import { Button, Text, Flex } from '../../../components';
 import CartItemModel from '../../../modules/checkout/CartItemModel';
 import theme from '../../../components/theme';
 
@@ -25,16 +25,12 @@ const CheckoutTable = styled('table')`
 const CheckoutList = ({ cartItems, removeFromCart, addToCart }: Props) => {
     if (cartItems.length < 1) {
         return (
-            <Box>
+            <Flex justifyContent="center">
                 <Text textAlign="center" color="midGray" my={5}>
                     You dont have any product in your cart.
-                    <RouteLink to="/">
-                        <Link ml="4px" mb={[2, 0]} width={[1, 1 / 3]}>
-                            Browse products
-                        </Link>
-                    </RouteLink>
+                    <RouteLink to="/">&nbsp;Browse products</RouteLink>
                 </Text>
-            </Box>
+            </Flex>
         );
     }
     return (
