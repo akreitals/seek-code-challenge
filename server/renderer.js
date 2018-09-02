@@ -3,8 +3,8 @@ import ReactDomServer from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
 import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom';
-import { configureStore } from '../app/state/configureStore';
 import { CookiesProvider } from 'react-cookie';
+import { configureStore } from '../app/state/configureStore';
 import ThemeProvider from '../app/components/ThemeProvider/ThemeProvider';
 
 import RoutesContainer from '../app/containers/Routes/RoutesContainer';

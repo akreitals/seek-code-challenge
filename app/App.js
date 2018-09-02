@@ -8,7 +8,8 @@ import { configureStore } from './state/configureStore';
 import history from './state/history';
 import { cookies } from './modules/utils/session/SessionCookiesFactory';
 
-const store = configureStore(window.__INITIAL_STATE__)
+/* eslint-disable no-underscore-dangle */
+const store = configureStore(window.__INITIAL_STATE__);
 
 export default class App extends Component {
     render() {

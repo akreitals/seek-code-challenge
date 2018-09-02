@@ -1,8 +1,16 @@
 import styled from 'styled-components';
-import { space, width, color, fontSize, textAlign, borders } from 'styled-system';
+import {
+    space,
+    width,
+    color,
+    fontSize,
+    textAlign,
+    borders,
+    minWidth
+} from 'styled-system';
 import theme from '../theme';
 
-const Box = styled('div')(space, width, color, fontSize, textAlign);
+const Box = styled('div')(space, width, color, fontSize, textAlign, minWidth);
 
 Box.displayName = 'Box';
 
@@ -18,7 +26,8 @@ Box.propTypes = {
     ...color.propTypes,
     ...fontSize.propTypes,
     ...textAlign.propTypes,
-    ...borders.propTypes
+    ...borders.propTypes,
+    ...minWidth.propTypes
 };
 
 Box.defaultProps = {

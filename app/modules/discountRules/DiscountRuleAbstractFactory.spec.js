@@ -1,4 +1,5 @@
 // @flow
+/* eslint-disable no-console */
 import DiscountRuleAbstractFactory from './DiscountRuleAbstractFactory';
 import AbstractDiscountRuleModel from './models/AbstractDiscountRuleModel';
 import FixedDiscountRuleModel from './models/FixedDiscountDiscountRuleModel';
@@ -7,6 +8,7 @@ import ProductModel from '../products/ProductModel';
 
 describe('ProductJsonToProductTransformer', () => {
     const spy = {};
+    let discountRuleAbstractFactory;
 
     beforeEach(() => {
         spy.console = jest.spyOn(console, 'warn').mockImplementation(() => {});
@@ -17,7 +19,7 @@ describe('ProductJsonToProductTransformer', () => {
     });
 
     test('should successfully load an array of models into the factory map', async () => {
-        const discountRuleAbstractFactory = new DiscountRuleAbstractFactory([
+        discountRuleAbstractFactory = new DiscountRuleAbstractFactory([
             {
                 name: 'FixedDiscountDiscountRuleModel',
                 constructor: FixedDiscountRuleModel
@@ -50,7 +52,7 @@ describe('ProductJsonToProductTransformer', () => {
     });
 
     test('should warn the user if trying to add the same constructor to the factory map', async () => {
-        const discountRuleAbstractFactory = new DiscountRuleAbstractFactory([
+        discountRuleAbstractFactory = new DiscountRuleAbstractFactory([
             {
                 name: 'FixedDiscountDiscountRuleModel',
                 constructor: FixedDiscountRuleModel
@@ -68,7 +70,7 @@ describe('ProductJsonToProductTransformer', () => {
     });
 
     test('should warn the user if trying to add an invalid constructor type to the factory map', async () => {
-        const discountRuleAbstractFactory = new DiscountRuleAbstractFactory([
+        discountRuleAbstractFactory = new DiscountRuleAbstractFactory([
             {
                 name: 'NotADiscountRule',
                 constructor: ProductModel
@@ -82,7 +84,7 @@ describe('ProductJsonToProductTransformer', () => {
     });
 
     test('should throw an error if the model is not in the factory map', async () => {
-        const discountRuleAbstractFactory = new DiscountRuleAbstractFactory([
+        discountRuleAbstractFactory = new DiscountRuleAbstractFactory([
             {
                 name: 'FixedDiscountDiscountRuleModel',
                 constructor: FixedDiscountRuleModel

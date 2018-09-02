@@ -2,8 +2,6 @@ import * as types from './types';
 import { createReducer } from '../utils';
 import { checkoutProvider } from '../../modules/checkout/CheckoutProviderFactory';
 
-let checkout;
-
 /* State shape
 {
     cartItems: [
@@ -17,19 +15,15 @@ let checkout;
 */
 
 const initialState = {
-    cartItems: []
+    cartItems: [],
+    total: 0
 };
 
 const cartReducer = createReducer(initialState)({
-    [types.CREATE_CART]: (state, action) => {
-        const { discountRules } = action.payload;
-        checkout = checkoutProvider.createInstance(discountRules);
-        return state;
-    },
-
     [types.ADD_ITEM]: (state, action) => {
         const { product } = action.payload;
 
+        const checkout = checkoutProvider.getCheckout();
         checkout.addItem(product);
 
         return {
@@ -41,13 +35,16 @@ const cartReducer = createReducer(initialState)({
     [types.REMOVE_ITEM]: (state, action) => {
         const { product } = action.payload;
 
+        const checkout = checkoutProvider.getCheckout();
         checkout.removeItem(product);
 
         return {
             cartItems: checkout.getCartItems(),
             total: checkout.total()
         };
-    }
+    },
+
+    [types.CLEAR_CART]: () => initialState
 });
 
 export default cartReducer;

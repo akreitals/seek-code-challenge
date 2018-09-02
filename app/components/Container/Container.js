@@ -10,6 +10,7 @@ const maxWidth = props =>
 const Container = styled.div`
     margin-left: auto;
     margin-right: auto;
+    padding: 0 ${theme.space[2]}px;
 
     ${maxWidth};
 `;

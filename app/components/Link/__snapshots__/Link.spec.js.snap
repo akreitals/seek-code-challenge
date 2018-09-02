@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link should render a <Link /> component 1`] = `
+.c1 {
+  margin: 0px;
+  color: #2765cf;
+}
+
+.c0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<a
+  className="c0 c1"
+  color="info"
+>
+  Hello
+</a>
+`;
+
+exports[`Link should render a <Link /> component with an underline prop 1`] = `
+.c1 {
+  margin: 0px;
+  color: #2765cf;
+}
+
+.c0 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<a
+  className="c0 c1"
+  color="info"
+>
+  Underline
+</a>
+`;

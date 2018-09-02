@@ -1,4 +1,4 @@
 // @flow
-import { createCart, addToCart, removeFromCart } from './actions';
+import { createCart, addToCart, removeFromCart, clearCart } from './actions';
 
-export { createCart, addToCart, removeFromCart };
+export { createCart, addToCart, removeFromCart, clearCart };

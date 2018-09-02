@@ -7,7 +7,7 @@
     "start": "cross-env nodemon index.js",
     "start:debug": "cross-env NODE_LOG_LEVEL=debug nodemon index.js --debug",
     "start:prod": "cross-env NODE_ENV=production node index.js",
-    "build": "cross-env NODE_ENV=production webpack && npm run build:server",
+    "build": "npm run lint && npm run test && cross-env NODE_ENV=production webpack && npm run build:server",
     "build:server": "cross-env NODE_ENV=production webpack --config config/webpack.server.config.js",
     "build:analyse": "cross-env NODE_ENV=production NODE_ANALYZE=true webpack",
     "lint": "./node_modules/.bin/eslint app server",

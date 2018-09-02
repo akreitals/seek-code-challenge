@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import * as types from './types';
 import { createReducer } from '../utils';
 
@@ -23,7 +22,6 @@ const listReducer = createReducer(initialState)({
     }),
     [types.FETCH_LIST_SUCCESS]: (state, action) => {
         const { products } = action.payload;
-        console.log(action);
         return {
             ...state,
             loading: false,

@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import * as types from './types';
 import { createReducer } from '../utils';
 import { cookies } from '../../modules/utils/session/SessionCookiesFactory';
@@ -24,7 +23,7 @@ const sessionReducer = createReducer(initialState)({
         return {
             loggingIn: true,
             customer
-        }
+        };
     },
     [types.LOGIN_SUCCESS]: (state, action) => {
         const { customer } = action.payload;

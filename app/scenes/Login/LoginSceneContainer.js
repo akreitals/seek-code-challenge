@@ -1,11 +1,23 @@
+// @flow
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { sessionOperations } from '../../state/session';
 import LoginForm from './components/LoginForm';
-import PrivateRoute from "../../containers/Routes/PrivateRoute";
 
-class LoginContainer extends Component {
-    constructor(props) {
+type Props = {
+    login: func,
+    loggingIn: boolean,
+    error: Object
+};
+
+type State = {
+    username: string,
+    password: string,
+    submitted: boolean
+};
+
+class LoginContainer extends Component<Props, State> {
+    constructor(props: Props) {
         super(props);
 
         this.state = {

@@ -1,4 +1,5 @@
 // @flow
+/* eslint-disable no-console */
 import type { DiscountRuleInterface } from './models/DiscountRuleInterface';
 import AbstractDiscountRuleModel from './models/AbstractDiscountRuleModel';
 

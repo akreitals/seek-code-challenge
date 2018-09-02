@@ -4,18 +4,27 @@ import { connect } from 'react-redux';
 import ProductListItem from '../productCard/ProductCard';
 import { Flex } from '../../../../components';
 import { cartOperations } from '../../../../state/cart';
+import type ProductModel from '../../../../modules/products/ProductModel';
+import type { Cart } from '../../../../modules/checkout/Checkout';
 
-function ProductList(props) {
+type Props = {
+    products: Array<ProductModel>,
+    addToCart: func,
+    removeFromCart: func,
+    cart: Cart
+};
+
+function ProductList({ products, addToCart, removeFromCart, cart }: Props) {
     return (
-        <Flex>
-            {props.products.map(product => (
+        <Flex flexWrap="wrap" justifyContent="center">
+            {products.map(product => (
                 <ProductListItem
                     key={product.id}
                     product={product}
-                    addToCart={props.addToCart}
-                    removeFromCart={props.removeFromCart}
+                    addToCart={addToCart}
+                    removeFromCart={removeFromCart}
                     cartItem={
-                        props.cart.cartItems.filter(
+                        cart.cartItems.filter(
                             cartItem => cartItem.id === product.id
                         )[0]
                     }

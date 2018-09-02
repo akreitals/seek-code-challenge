@@ -3,8 +3,14 @@ import { productRepository } from '../../modules/products/repository/ProductRepo
 
 export const fetchList = () => {
     const request = () => ({ type: types.FETCH_LIST_REQUEST });
-    const success = (products) => ({type: types.FETCH_LIST_SUCCESS, payload: { products }});
-    const failure = (error) => ({type: types.FETCH_LIST_FAILURE, payload: { error }});
+    const success = products => ({
+        type: types.FETCH_LIST_SUCCESS,
+        payload: { products }
+    });
+    const failure = error => ({
+        type: types.FETCH_LIST_FAILURE,
+        payload: { error }
+    });
 
     return async dispatch => {
         dispatch(request());

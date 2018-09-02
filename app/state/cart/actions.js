@@ -25,3 +25,5 @@ export const removeFromCart = (product: ProductModel) => ({
         product
     }
 });
+
+export const clearCart = () => ({ type: types.CLEAR_CART });

@@ -8,12 +8,10 @@ import {
 import Box from '../Box/Box';
 import theme from '../theme';
 
-const wrap = props => (props.wrap ? { flexWrap: 'wrap' } : null);
-
 const Flex = styled(Box)`
     display: flex;
     
-    ${alignItems} ${justifyContent} ${flexDirection} ${wrap};
+    ${alignItems} ${justifyContent} ${flexDirection} ${flexWrap};
 `;
 
 Flex.displayName = 'Flex';

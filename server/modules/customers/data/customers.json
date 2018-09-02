@@ -48,7 +48,7 @@
       ]
     },
     {
-      "id": "3",
+      "id": "4",
       "name": "Henry Fjord",
       "company": "Ford",
       "email": "customer@ford.com",
@@ -77,6 +77,13 @@
           "discountedPrice": 38999
         }
       ]
+    },
+    {
+      "id": "5",
+      "name": "Dr Default",
+      "company": "",
+      "email": "customer@default.com",
+      "discountRules": []
     }
   ]
 }

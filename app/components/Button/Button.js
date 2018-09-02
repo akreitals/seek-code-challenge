@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { space, width } from 'styled-system';
-import theme from '../theme';
+import theme, { colors } from '../theme';
 
 const fullWidth = props => (props.fullWidth ? { width: '100%' } : null);
 
@@ -18,17 +18,13 @@ const Button = styled('button')`
     border-radius: ${props => props.theme.radius};
     background-color: ${props => props.theme.colors.primary};
     color: ${props => props.theme.colors.white};
-    border-width: 0;
+    border-color: ${props => props.theme.colors.primary};
+    border-width: 1px;
     border-style: solid;
     font-size: ${theme.fontSizes[3]}px;
     padding: 0 20px;
 
     ${props => props.disabled && { opacity: 0.25, cursor: 'not-allowed' }};
-
-    &:hover {
-        background-color: ${props =>
-            props.disabled ? null : props.theme.colors.darkBlue};
-    }
 
     &:focus {
         outline: none;
@@ -54,6 +50,18 @@ Button.propTypes = {
 Button.defaultProps = {
     theme
 };
+
+Button.secondary = styled(Button)`
+    background-color: transparent;
+    border-color: ${colors.charcoal};
+    color: ${colors.charcoal};
+`;
+
+Button.inverse = styled(Button)`
+    background-color: transparent;
+    border-color: ${colors.white};
+    color: ${colors.white};
+`;
 
 Button.input = Button.withComponent('input');
 

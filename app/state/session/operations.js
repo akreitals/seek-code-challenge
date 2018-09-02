@@ -1,8 +1,3 @@
-import {
-    login,
-    logout,
-    initializeSession,
-    setRedirectAfterLogin
-} from './actions';
+import { login, logout } from './actions';
 
-export { login, logout, initializeSession, setRedirectAfterLogin };
+export { login, logout };
