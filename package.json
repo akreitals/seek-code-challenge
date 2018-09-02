@@ -11,7 +11,7 @@
     "build:server": "cross-env NODE_ENV=production webpack --config config/webpack.server.config.js",
     "build:analyse": "cross-env NODE_ENV=production NODE_ANALYZE=true webpack",
     "lint": "./node_modules/.bin/eslint app server",
-    "test": "jest --updateSnapshot",
+    "test": "jest",
     "eslint-check": "eslint --print-config . | eslint-config-prettier-check"
   },
   "repository": {
