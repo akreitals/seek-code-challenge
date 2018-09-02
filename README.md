@@ -35,7 +35,7 @@ Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
 npm run build
 npm run start:prod
 ```
-Builds the app in production mode, including babelifying the server and providing minified and cache-busted javascript assets.
+Runs linting (eslint, flow, styled) and tests and then builds the app in production mode, including babelifying the server and providing minified and cache-busted javascript assets.
 
 # Testing
 ```
