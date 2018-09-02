@@ -37,6 +37,15 @@ npm run start:prod
 ```
 Runs linting (eslint, flow, styled) and tests and then builds the app in production mode, including babelifying the server and providing minified and cache-busted javascript assets.
 
+### Authentication Details
+| Company  	| Credentials                                                	| Discount                                                                    	|
+|----------	|------------------------------------------------------------	|-----------------------------------------------------------------------------	|
+| Default  	| username: `customer@default.com` password: `password`      	|                                                                             	|
+| Unilever 	| username: `customer@unilever.com` password: `password` 	    | 3 for 2 Classic Ads                                                         	|
+| Apple    	| username: `customer@apple.com` password: `password`        	| Discount Standard Ads                                                       	|
+| Nike     	| username: `customer@nike.com` password: `password`         	| Discount on 4 or more Premium Ads                                           	|
+| Ford     	| username: `customer@ford.com` password: `password`         	| 5 for 4 Classic Ads Discount Standard Ads Discount on 3 or more Premium Ads 	|
+
 # Testing
 ```
 npm test
