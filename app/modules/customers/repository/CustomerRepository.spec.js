@@ -56,8 +56,7 @@ describe('CustomerRepository', () => {
         expect(customer).toBe(mockCustomer);
 
         expect(
-            mockCustomerJsonToCustomerTransformerConvertSingle.mock
-                .calls[0][0]
+            mockCustomerJsonToCustomerTransformerConvertSingle.mock.calls[0][0]
         ).toEqual(data);
 
         expect(axiosJsonApiDao.get.mock.calls[0][0]).toBeInstanceOf(

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should render a card with  small box shadow 1`] = `
+.c0 {
+  background-color: #ffffff;
+  box-shadow: 0 0 2px 0 rgba(0,0,0,.08),0 1px 4px 0 rgba(0,0,0,.16);
+  border: 1px solid undefined;
+  border-radius: 0px;
+}
+
+<div
+  className="c0 "
+/>
+`;
+
+exports[`Card should render a card with a 1px border 1`] = `
+.c0 {
+  background-color: #ffffff;
+  border: 1px solid undefined;
+  border-radius: 0px;
+}
+
+<div
+  className="c0 "
+/>
+`;
+
+exports[`Card should render a card with a large shadow 1`] = `
+.c0 {
+  background-color: #ffffff;
+  box-shadow: 0 0 2px 0 rgba(0,0,0,.08),0 4px 16px 0 rgba(0,0,0,.16);
+  border: 1px solid undefined;
+  border-radius: 0px;
+}
+
+<div
+  className="c0 "
+/>
+`;

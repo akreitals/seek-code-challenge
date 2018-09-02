@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box bg prop successfully sets background color 1`] = `
+.c0 {
+  background-color: #9556b7;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Box bg prop successfully sets custom background color 1`] = `
+.c0 {
+  background-color: #ff6d00;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Box color prop successfully sets color 1`] = `
+.c0 {
+  color: #f57c00;
+}
+
+<div
+  className="c0"
+  color="warning"
+/>
+`;
+
+exports[`Box m prop successfully sets margin 1`] = `
+.c0 {
+  margin: 4px;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Box p prop successfully sets padding 1`] = `
+.c0 {
+  padding: 4px;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Box should render a <Box /> component 1`] = `
+<div
+  className=""
+/>
+`;
+
+exports[`Box width prop successfully sets width 1`] = `
+.c0 {
+  width: 50%;
+}
+
+<div
+  className="c0"
+  width={0.5}
+/>
+`;

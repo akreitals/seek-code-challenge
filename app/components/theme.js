@@ -1,3 +1,5 @@
+const maxContainerWidth = '940px';
+
 const emoji = '"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"';
 const font = `Averta, -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif, ${emoji}`;
 const mono = 'SFMono-Regular,"Roboto Mono",Menlo,monospace';
@@ -49,6 +51,16 @@ export const colors = {
     ...brand
 };
 
+export const radius = '2px';
+
+// boxShadows
+export const boxShadows = [
+    `0 0 2px 0 rgba(0,0,0,.08),0 1px 4px 0 rgba(0,0,0,.16)`,
+    `0 0 2px 0 rgba(0,0,0,.08),0 2px 8px 0 rgba(0,0,0,.16)`,
+    `0 0 2px 0 rgba(0,0,0,.08),0 4px 16px 0 rgba(0,0,0,.16)`,
+    `0 0 2px 0 rgba(0,0,0,.08),0 8px 32px 0 rgba(0,0,0,.16)`
+];
+
 const theme = {
     colors,
     font,
@@ -56,7 +68,10 @@ const theme = {
     fontSizes,
     space,
     regular,
-    bold
+    bold,
+    maxContainerWidth,
+    radius,
+    boxShadows
 };
 
 export default theme;

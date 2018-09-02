@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDomServer from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
+import { Provider } from 'react-redux';
+import { StaticRouter } from 'react-router-dom';
+import { configureStore } from '../app/state/configureStore';
 import ThemeProvider from '../app/components/ThemeProvider/ThemeProvider';
 
-import App from '../app/App';
+import RoutesContainer from '../app/containers/Routes/RoutesContainer';
 
 const isProduction = process.env.NODE_ENV === 'production' || false;
 
@@ -37,11 +40,16 @@ const render = (html, styles) => {
 const serverSideRender = (req, res) => {
     const context = {};
     const sheet = new ServerStyleSheet();
+    const store = configureStore();
 
     const appWithRouter = (
-        <ThemeProvider>
-            <App />
-        </ThemeProvider>
+        <Provider store={store}>
+            <ThemeProvider>
+                <StaticRouter location={req.url} context={context}>
+                    <RoutesContainer />
+                </StaticRouter>
+            </ThemeProvider>
+        </Provider>
     );
 
     if (context.url) {

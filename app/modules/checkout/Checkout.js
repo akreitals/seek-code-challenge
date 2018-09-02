@@ -34,6 +34,10 @@ export default class Checkout {
         const cartItem = this._cart[product.id];
         if (cartItem) {
             cartItem.removeItem();
+
+            if (cartItem.quantity < 1) {
+                delete this._cart[product.id];
+            }
         }
 
         this._updateDiscount();
@@ -49,6 +53,10 @@ export default class Checkout {
 
     total(): number {
         return this._total;
+    }
+
+    getCartItems() {
+        return Object.values(this._cart);
     }
 
     _updateDiscount(): void {

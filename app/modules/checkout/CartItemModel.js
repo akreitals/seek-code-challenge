@@ -15,6 +15,7 @@ export default class CartItemModel {
     constructor(product: ProductModel) {
         this.id = product.id;
         this.originalPricePerItem = product.price;
+        this.name = product.name;
         this.quantity = 1;
         this.totalPrice = product.price;
         this.totalDiscount = 0;
@@ -26,8 +27,10 @@ export default class CartItemModel {
     }
 
     removeItem(): void {
-        this.quantity = this.quantity - 1;
-        this.setTotalPrice(this.totalPrice - this.originalPricePerItem);
+        if (this.quantity > 0) {
+            this.quantity = this.quantity - 1;
+            this.setTotalPrice(this.totalPrice - this.originalPricePerItem);
+        }
     }
 
     setTotalPrice(price: number) {

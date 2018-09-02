@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image should render a <Image /> component 1`] = `
+<img
+  alt="Alt Text"
+  className="sc-gzVnrw fQahbn"
+  src="https://hackclub.com/lah_1.jpg"
+/>
+`;
